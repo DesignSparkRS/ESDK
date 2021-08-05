@@ -85,7 +85,7 @@ $ source venv/bin/activate
 Each Python script includes two optional arguments:
 
 * -i <seconds> (sampling interval - default = 5s)
-* -f <filename 
+* -f <filename>
 
 E.g.:
 
@@ -105,7 +105,7 @@ $ pip install -r requirements.txt
 
 The first command fetches any updates from GitHub.
 
-The second command checkes the Python dependencies and if these have been
+The second command checks the Python dependencies and if these have been
 updated, gets them from PyPy.
 
 Note: this assumes that you are in still in the `test` directory and the Python
