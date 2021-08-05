@@ -5,11 +5,11 @@ aid development.
 
 ## Installation
 
-### Initial
+### Initial environment setup
 
 This only needs to be done once.
 
-Create a file called .ssh/id_rsa with contents:
+Create a file called `~pi/.ssh/id_rsa` with contents:
 
 ```
 -----BEGIN OPENSSH PRIVATE KEY-----
@@ -41,18 +41,44 @@ B4fFLaFjSrG7mdWGAwAAAAdwaUBhYnBpAQI=
 -----END OPENSSH PRIVATE KEY-----
 ```
 
+This is a deploy key, that provides access to the GitHub repo from the Pi, while
+it remains in private mode. 
+
 Then execute the following commands:
 
 ```
 $ sudo apt update && sudo apt dist-upgrade
 
-$ sudo apt install git
+$ sudo apt install git python3-venv
 
-$ git@github.com:DesignSparkrs/ESDK.git
+$ got clone git@github.com:DesignSparkrs/ESDK.git
 
 $ cd ESDK/software/test
 
 $ python3 -m venv venv
 
+$ source venv/bin/activate
+
+$ pip install -r requirements.txt
+
+```
+
+Note that whenever the command prompt is prefixed with "(venv)" this means that
+the Python virtual environment is activated and scripts can be run. However, if
+you log out and back in again or reboot, it will be neccessary to activate the
+environment again. This is simply done with:
+
+```
+$ cd ESDK/software/test
+
+$ source venv/bin/activate
+```
+
+### Running the examples
+
+
+
 ### Updating
+
+
 
