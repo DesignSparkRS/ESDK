@@ -84,8 +84,8 @@ $ source venv/bin/activate
 
 Each Python script includes two optional arguments:
 
-* -i <seconds> (sampling interval - default = 5s)
-* -f <filename>
+* `-i <seconds>` (sampling interval - default = 5s)
+* `-f <filename>`
 
 E.g.:
 
