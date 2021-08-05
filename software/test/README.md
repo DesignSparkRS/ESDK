@@ -41,17 +41,23 @@ B4fFLaFjSrG7mdWGAwAAAAdwaUBhYnBpAQI=
 -----END OPENSSH PRIVATE KEY-----
 ```
 
-This is a deploy key, that provides access to the GitHub repo from the Pi, while
-it remains in private mode. 
+E.g.:
 
-Then execute the following commands:
+``$ nano ~pi/.ssh/id_rsa``
+
+Then cut and paste the above text into the file, save and exit.
+
+This sets up a deploy key, that provides access to the GitHub repo from the Pi,
+while it remains in private mode. 
+
+Then execute the following series of commands:
 
 ```
 $ sudo apt update && sudo apt dist-upgrade
 
 $ sudo apt install git python3-venv
 
-$ got clone git@github.com:DesignSparkrs/ESDK.git
+$ git clone git@github.com:DesignSparkrs/ESDK.git
 
 $ cd ESDK/software/test
 
@@ -76,9 +82,31 @@ $ source venv/bin/activate
 
 ### Running the examples
 
+Each Python script includes two optional arguments:
 
+* -i <seconds> (sampling interval - default = 5s)
+* -f <filename 
+
+E.g.:
+
+```
+$ ./SHT31.py -i 10 -f temphum.csv 
+```
 
 ### Updating
 
+To get the latest versions run the following commands:
 
+```
+$ git pull
 
+$ pip install -r requirements.txt
+```
+
+The first command fetches any updates from GitHub.
+
+The second command checkes the Python dependencies and if these have been
+updated, gets them from PyPy.
+
+Note: this assumes that you are in still in the `test` directory and the Python
+virtual environment is active (the command prompt has the "(venv)" prefix.
