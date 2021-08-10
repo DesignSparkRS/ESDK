@@ -1,7 +1,11 @@
+#!/usr/bin/env python3
+
+# -*- coding: utf-8 -*-
+# Copyright (c) 2021 RS Components Ltd
+# SPDX-License-Identifier: MIT License
+
 '''
 Python SHT31 CSV logger
-
-AB Open 2021
 '''
 
 import time, smbus, argparse, csv, os
