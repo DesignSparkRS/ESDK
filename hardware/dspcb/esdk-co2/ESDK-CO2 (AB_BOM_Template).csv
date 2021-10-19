@@ -1,0 +1,11 @@
+"Names","Value","Quantity","Manufacturer","Manufacturer Part Number","Component"
+"C1, C3","100nF",2,"AVX","06035C104K4T2A","Capacitor"
+"C2","10uF",1,"Taiyo Yuden","EMK107BBJ106MA-T","Capacitor"
+"CONN1",,1,,,"SolderBridge_0603_NC"
+"IC1",,1,"ST Microelectronics","LD1117S33TR","LD1117S33TR"
+"J1",,1,"SAMTEC","SSW-106-02-G-D-RA","SSW-106-02-G-D-RA"
+"J2",,1,"SAMTEC","TSW-106-08-G-D-RA","TSW-106-08-G-D-RA"
+"LED2",,1,"Kingbright","KPA-3010YC","KPA-3010YC"
+"R1","330R",1,"TE Connectivity","CRG0603F330R","Resistor"
+"U1",,1,"Sensirion","SCD41-D-R1","SCD41-D-R1"
+"Sub-total:",,10,,,

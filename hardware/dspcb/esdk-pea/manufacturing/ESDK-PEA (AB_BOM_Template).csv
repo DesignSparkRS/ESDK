@@ -1,0 +1,8 @@
+"Names","Value","Quantity","Manufacturer","Manufacturer Part Number","Component"
+"J1",,1,"SAMTEC","SSW-106-02-G-D-RA","SSW-106-02-G-D-RA"
+"J2",,1,"Molex",53398-0871,53398-0871
+"J3",,1,"Seeedstudio",110990030,"Grove_Universal_4_Pin_connector"
+"LED1",,1,"OSRAM","LG Q396","LED"
+"LED2",,1,"OSRAM","LY Q396","LED"
+"R1-2","330R",2,"TE Connectivity","CRG0603F330R","Resistor"
+"Sub-total:",,7,,,
