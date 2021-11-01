@@ -1,0 +1,146 @@
+/*
+ * Device Tree Overlay for ESDK Display & Touchscreen (DT028CTFT-PTS2)
+ * RS Components 2021
+ *
+ */
+
+/dts-v1/;
+/plugin/;
+
+/ {
+        compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
+
+        fragment@0 {
+                target = <&spi0>;
+                __overlay__ {
+                        status = "okay";
+
+                        spidev@0{
+                                status = "disabled";
+                        };
+
+                        spidev@1{
+                                status = "disabled";
+                        };
+                };
+        };
+
+        fragment@1 {
+                target = <&gpio>;
+                __overlay__ {
+                        display_pins: display_pins {
+                                brcm,pins = <24 25>;
+                                brcm,function = <1 1>; /* out */
+                                brcm,pull = <0 0>; /* none */
+                        };
+
+                        ts_pins: ts_pins {
+                                brcm,pins = <17 4>;
+                                brcm,function = <0 1>; /* in, out */
+                                brcm,pull = <2 0>; /* pullup, none */
+                        };
+
+                        backlight_pins: backlight_pins {
+                                brcm,pins = <12>;
+                                brcm,function = <4>; /* Alt0 mode is PWM */
+                        };
+                };
+        };
+
+        fragment@2 {
+                target = <&pwm>;
+                frag1: __overlay__ {
+                        pinctrl-names = "default";
+                        pinctrl-0 = <&backlight_pins>;
+                        assigned-clock-rates = <1000000>;
+                        status = "okay";
+                };
+        };
+
+        fragment@3 {
+                target-path = "/";
+                __overlay__ {
+                        display_backlight: display_backlight {
+                                compatible = "pwm-backlight";
+                                brightness-levels = <0 6 8 12 16 24 32 40 48 64 96 128 160 192 224 255>;
+                                default-brightness-level = <6>;
+                                pwms = <&pwm 0 200000>;
+                                power-supply = <&vdd_3v3_reg>;
+                                status = "okay";
+                        };
+                };
+        };
+
+        fragment@4 {
+                target = <&spi0>;
+                __overlay__ {
+                        /* needed to avoid dtc warning */
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+
+                        display: display@0{
+                                compatible = "ilitek,ili9341";
+                                reg = <0>;
+                                pinctrl-names = "default";
+                                pinctrl-0 = <&display_pins>;
+
+                                spi-max-frequency = <32000000>;
+                                txbuflen = <32768>;
+                                rotate = <270>;
+                                bgr = <1>;
+                                fps = <30>;
+                                buswidth = <8>;
+                                reset-gpios = <&gpio 24 1>;
+                                dc-gpios = <&gpio 25 0>;
+                                debug = <0>;
+
+                                /* init routine necessary to invert display colours */
+                                init = <0x1000001
+                                        0x2000005
+                                        0x1000028
+                                        0x10000CF 0x00 0x83 0x30
+                                        0x10000ED 0x64 0x03 0x12 0x81
+                                        0x10000E8 0x85 0x01 0x79
+                                        0x10000DB 0x39 0x2C 0x00 0x34 0x02
+                                        0x10000F7 0x20
+                                        0x10000EA 0x00 0x00
+                                        0x10000C0 0x26
+                                        0x10000C1 0x11
+                                        0x10000C5 0x35 0x3E
+                                        0x10000C7 0xBE
+                                        0x100003A 0x55
+                                        0x10000B1 0x00 0x1B
+                                        0x1000026 0x01
+                                        0x1000021
+                                        0x10000B7 0x07
+                                        0x10000B6 0x0A 0x82 0x27 0x00
+                                        0x1000011
+                                        0x2000064
+                                        0x1000029
+                                        0x2000014>;
+                        };
+
+                };
+        };
+
+        fragment@5 {
+                target = <&i2c0>;
+                __overlay__ {
+                        /* needed to avoid dtc warning */
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+
+                        display_ts: display_ts@38 {
+                                compatible = "focaltech,ft6236";
+                                reg = <0x38>;
+
+                                interrupt-parent = <&gpio>;
+                                interrupts = <17 2>;
+                                touchscreen-size-x = <240>;
+                                touchscreen-size-y = <320>;
+                                touchscreen-swapped-x-y = <1>;
+                                touchscreen-inverted-x = <1>;
+                        };
+                };
+        };
+};
