@@ -148,12 +148,17 @@ def count_thread():
     lastCpsCount = 0
     cpsStartTime = 0
     cpmStartTime = 0
+    startOfPulse = False
 
     cps_sma_list = []
     cpm_sma_list = []
     while True:
         # Check to see if sensor has detected radiation
-        if(sensor.value() == True):
+        if(sensor.value() == True and not startOfPulse):
+            startOfPulse = True
+
+        if(sensor.value() == False and startOfPulse):
+            startOfPulse = False
             event = True
             count = count + 1
 
