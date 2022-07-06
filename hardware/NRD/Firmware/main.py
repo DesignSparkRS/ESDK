@@ -75,10 +75,8 @@ def i2c_thread():
                     if(i2c_data[0] == 0x04):
                         if(i2c_data[1] == 0x01):
                             led_enabled = True
-                            i2c_data.clear()
                         elif(i2c_data[1] == 0x00):
                             led_enabled = False
-                            i2c_data.clear()
                     
                     # Reset all counters
                     if(i2c_data[0] == 0x05 and i2c_data[1] == 0x01):
