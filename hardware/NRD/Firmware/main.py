@@ -110,8 +110,8 @@ def i2c_thread():
         
         # Requested total count
         if(i2c_data[0] == 0x03):
-            if(count > 4,294,967,295):
-                count_capped = 4,294,967,295
+            if(count > 4294967295):
+                count_capped = 4294967295
             else:
                 count_capped = count
             i2c.put_read_data(bytearray(count_capped.to_bytes(4, 'big'))[replyByteCounter])
