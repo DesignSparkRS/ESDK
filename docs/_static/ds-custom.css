@@ -1,0 +1,54 @@
+/* -- DesignSpark Branding ----------------------- */
+
+/* make the page width fill the window */
+.wy-nav-content {
+   max-width: 1200px !important;
+}
+
+/* :option: link color */
+a code span.pre {
+   color: #00b27f;
+}
+
+/* Tweak sidebar colours */
+
+.wy-side-nav-search {
+   background-color: #ffffff;
+}
+
+.wy-side-nav-search>a {
+   color: #000;
+}
+
+.wy-nav-side {
+   background: #f7f7f7;
+}
+
+.wy-menu-vertical a {
+   color: #000;
+}
+
+/* tweak doc version selection */
+.rst-versions {
+   position: static;
+}
+
+.rst-versions .rst-current-version {
+   padding: 5px;
+   background-color: #1f1f1f;
+   color: #80FF80;
+}
+
+.rst-versions .rst-other-versions {
+   padding: 5px;
+}
+
+div.rst-other-versions dl {
+   margin-bottom: 0;
+}
+
+
+/* bold the level1 headings in on-page toctree displays */
+.rst-content  .toctree-l1 > a {
+  font-weight: bold;
+
