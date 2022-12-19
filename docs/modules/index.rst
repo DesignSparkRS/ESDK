@@ -12,48 +12,49 @@ Modules
 
 .. list-table:: ESDK Modules
    :header-rows: 1
+   :widths: 5 30 10 10
 
    * - Name
      - Description
      - I2C
      - GPIO
-   * - :doc:`main`
+   * - :doc:`Main <main>`
      - Main board
      - N/A
      - N/A
-   * - :doc:`pea`
+   * - :doc:`PEA <pea>`
      - Sensor chain start
      - N/A 
      - N/A 
-   * - :doc:`thv`
+   * - :doc:`THV <thv>`
      - Temperature, humidity and VOCs sensor
      - ?
      - ?
-   * - :doc:`co2`
+   * - :doc:`CO2 <co2>`
      - Carbon dioxide sensor
      - ?
      - ?
-   * - :doc:`pm2`
+   * - :doc:`PM2 <pm2>`
      - Particulate matter sensor
      - ?
      - ?
-   * - :doc:`no2`
+   * - :doc:`NO2 <no2>`
      - Nitrogen dioxide sensor
      - ?
      - ?
-   * - :doc:`fdh`
+   * - :doc:`FDH <fdh>`
      - Formaldehyde sensor
      - ?
      - ?
-   * - :doc:`nrd`
+   * - :doc:`NRD <nrd>`
      - Nuclear radiation detector
      - ?
      - ?
-   * - :doc:`cre`
+   * - :doc:`CRE <cre>`
      - Cabled range extenders
      - N/A 
      - N/A 
-   * - :doc:`eea`
+   * - :doc:`EEA <eea>`
      - Ecosystem adapter board
      - N/A 
      - N/A 
