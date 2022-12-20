@@ -20,7 +20,7 @@ The Main board plugs into a Raspberry Pi SBC and provides:
 Schematic diagram
 -----------------
 
-.. image:: /images/ESDK-Main-schematic.svg
+.. image:: /images/ESDK-Main-Schematic.svg
    :alt: ESDK Main schematic diagram
 
 Theory of operation
@@ -37,7 +37,7 @@ For potential future use, a 5-pin Molex Pico-Lock connector can be used to enabl
 Board layout
 ------------
 
-.. image:: /images/ESDK-Main-layout.png
+.. image:: /images/ESDK-Main-Layout.png
    :alt: ESDK Main board layout
 
 GPIO Assignments
