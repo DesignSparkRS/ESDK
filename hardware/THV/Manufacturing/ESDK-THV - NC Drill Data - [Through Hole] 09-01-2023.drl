@@ -1,8 +1,8 @@
 G05
 M48
-;#@! TF.GenerationSoftware,DesignSpark,DesignSpark PCB PRO,10.0.5299
-;#@! TF.CreationDate,2021-10-19T15:13:29+00:00*
-;#@! TF.FileFunction,Plated,1,2,Buried
+;#@! TF.GenerationSoftware,DesignSpark,DesignSpark PCB PRO,10.0.5344
+;#@! TF.CreationDate,2023-01-09T14:36:02+00:00*
+;#@! TF.FileFunction,Plated,1,2,PTH
 ;FILE_FORMAT=3:5
 ;TYPE=PLATED
 INCH,TZ
