@@ -1,10 +1,10 @@
-"Names","Value","Quantity","Manufacturer","Manufacturer Part Number","Component"
-"CONN1",,1,,,"SolderBridge_0603_NC"
-"H1-2",,2,"PEM","SMTSO-M25-2ET","SMTSO-M25-2ET"
-"J1",,1,"SAMTEC","SSW-106-02-G-D-RA","SSW-106-02-G-D-RA"
-"J2",,1,"SAMTEC","TSW-106-08-G-D-RA","TSW-106-08-G-D-RA"
-"J3",,1,"Molex",5055680771,5055680771
-"LED1",,1,"Kingbright","KPA-3010CGCK","KPA-3010CGCK"
-"M1",,1,,,"SFA30-D-T"
-"R1","330R",1,"TE Connectivity","CRG0603F330R","Resistor"
-"Sub-total:",,9,,,
+"Names","Value","Quantity","Manufacturer","Manufacturer Part Number","RS PN","Component"
+"CONN1",,1,,,,"SolderBridge_0603_NC"
+"H1-2",,2,"PEM","SMTSO-M25-2ET",,"SMTSO-M25-2ET"
+"J1",,1,"SAMTEC","SSW-106-02-G-D-RA","7655679P","SSW-106-02-G-D-RA"
+"J2",,1,"SAMTEC","TSW-106-08-G-D-RA",1803394,"TSW-106-08-G-D-RA"
+"J3",,1,"Molex",5055680771,,5055680771
+"LED1",,1,"Kingbright","KPA-3010CGCK","8624691P","KPA-3010CGCK"
+"M1",,1,"Sensirion","SFA30-D-T",,"SFA30-D-T"
+"R1","330R",1,"TE Connectivity","CRG0603F330R",213-2200,"Resistor"
+"Sub-total:",,9,,,,
